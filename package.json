@@ -81,6 +81,7 @@
     "@aws-amplify/backend-cli": "^1.4.0",
     "aws-cdk-lib": "^2.164.1",
     "constructs": "^10.4.2",
+    "esbuild": "^0.25.12",
     "jsforce": "^3.6.3",
     "dotenv": "^16.4.5",
     "tsx": "^4.19.1",

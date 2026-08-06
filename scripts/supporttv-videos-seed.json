@@ -1,0 +1,146 @@
+{
+  "whats-new": {
+    "latest-features": {
+      "title": "Latest Features & Updates",
+      "categoryTitle": "What's New",
+      "description": "Discover the newest features and improvements to the platform",
+      "videos": [
+        {
+          "id": 1,
+          "title": "New Career Pathway Visualizations",
+          "description": "Explore enhanced career pathway visualizations with interactive elements and improved data insights.",
+          "duration": "4:32",
+          "thumbnail": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": 2,
+          "title": "Enhanced API Rate Limits",
+          "description": "Learn about increased API rate limits for enterprise customers to support larger data operations.",
+          "duration": "3:15",
+          "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": 3,
+          "title": "Mobile App 3.0 Released",
+          "description": "Discover the new mobile app features including offline mode and push notifications.",
+          "duration": "5:48",
+          "thumbnail": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": 4,
+          "title": "Improved Dashboard Analytics",
+          "description": "See how the redesigned dashboard provides better insights at a glance.",
+          "duration": "6:20",
+          "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": 5,
+          "title": "New Reporting Features",
+          "description": "Explore the new custom reporting capabilities and export options.",
+          "duration": "4:05",
+          "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": 6,
+          "title": "Integration Updates",
+          "description": "Learn about new third-party integrations and improved API documentation.",
+          "duration": "3:42",
+          "thumbnail": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": 7,
+          "title": "Performance Improvements",
+          "description": "Discover how we've made the platform faster and more responsive.",
+          "duration": "2:58",
+          "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        }
+      ]
+    },
+    "quick-tip-dashboards": {
+      "title": "Quick Tip: New Dashboard Layout",
+      "categoryTitle": "What's New",
+      "description": "Learn about the redesigned dashboard interface",
+      "videos": [
+        {
+          "id": 1,
+          "title": "Quick Tip: New Dashboard Layout",
+          "description": "Learn about the redesigned dashboard interface in just 3 minutes.",
+          "duration": "3:00",
+          "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        }
+      ]
+    }
+  },
+  "user-administration": {
+    "getting-started": {
+      "title": "Getting Started with Users",
+      "categoryTitle": "User Administration",
+      "description": "Learn the basics of adding and managing users",
+      "videos": [
+        {
+          "id": 1,
+          "title": "Adding New Users",
+          "description": "Step-by-step guide to adding new users to your organization.",
+          "duration": "5:12",
+          "thumbnail": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": 2,
+          "title": "Managing Roles & Permissions",
+          "description": "Learn how to set up and manage user roles and permissions effectively.",
+          "duration": "7:30",
+          "thumbnail": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": 3,
+          "title": "User Profile Settings",
+          "description": "Configure user profile settings and preferences.",
+          "duration": "4:45",
+          "thumbnail": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": 4,
+          "title": "Understanding User Groups",
+          "description": "Organize users into groups for easier management.",
+          "duration": "5:55",
+          "thumbnail": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        },
+        {
+          "id": 5,
+          "title": "User Import Best Practices",
+          "description": "Tips for successfully importing large user lists.",
+          "duration": "6:20",
+          "thumbnail": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        }
+      ]
+    },
+    "bulk-import": {
+      "title": "Bulk User Import",
+      "categoryTitle": "User Administration",
+      "description": "Import multiple users at once using CSV files",
+      "videos": [
+        {
+          "id": 1,
+          "title": "Bulk User Import",
+          "description": "Import multiple users at once using CSV files. A quick guide to streamline your user setup process.",
+          "duration": "5:00",
+          "thumbnail": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=225&fit=crop",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        }
+      ]
+    }
+  }
+}

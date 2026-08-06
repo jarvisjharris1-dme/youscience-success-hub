@@ -1,0 +1,50 @@
+[
+  {
+    "productId": "user-administration",
+    "productName": "User Administration",
+    "displayName": "User Administration: Quick start guide",
+    "articleTitle": "User Administration: Admin quick start guide"
+  },
+  {
+    "productId": "aptitude-career-discovery",
+    "productName": "Aptitude & Career Discovery",
+    "displayName": "Aptitude & Career Discovery: Quick start guide",
+    "articleTitle": "Aptitude & Career Discovery: Quick start guide"
+  },
+  {
+    "productId": "education-career-plan",
+    "productName": "College & Career Readiness Planner",
+    "displayName": "College & Career Readiness Planner: Quick start guide",
+    "articleTitle": "Quick start guide"
+  },
+  {
+    "productId": "industry-certifications",
+    "productName": "Industry Certifications",
+    "displayName": "Industry Certifications: Admin quick start guide",
+    "articleTitle": "Industry Certifications: Admin quick start guide"
+  },
+  {
+    "productId": "industry-certifications",
+    "productName": "Industry Certifications",
+    "displayName": "Industry Certifications: Proctor quick start guide",
+    "articleTitle": "Industry Certifications: Proctor quick start guide"
+  },
+  {
+    "productId": "education-connections",
+    "productName": "Education Connections",
+    "displayName": "Education Connections: Quick start guide",
+    "articleTitle": "Quick start guide"
+  },
+  {
+    "productId": "work-based-learning",
+    "productName": "Work-Based Learning",
+    "displayName": "Work-Based Learning: Quick start guide",
+    "articleTitle": "Quick start guide"
+  },
+  {
+    "productId": "career-connections",
+    "productName": "Career Connections",
+    "displayName": "Career Connections: Quick start guide",
+    "articleTitle": "Quick start guide"
+  }
+]

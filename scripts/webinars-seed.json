@@ -1,0 +1,52 @@
+[
+  {
+    "id": "live-webinars",
+    "title": "Live webinars",
+    "articles": [
+      {
+        "id": "register-live-webinar",
+        "title": "Register for a live training webinar"
+      }
+    ]
+  },
+  {
+    "id": "pre-recorded-webinars",
+    "title": "Pre-recorded training webinars",
+    "articles": [
+      {
+        "id": "brightpath-recordings",
+        "title": "Brightpath webinar recordings"
+      },
+      {
+        "id": "user-administration",
+        "title": "Pre-recorded training webinars: User Administration"
+      },
+      {
+        "id": "aptitude-career-discovery",
+        "title": "Pre-recorded training webinars: Aptitude & Career Discovery"
+      },
+      {
+        "id": "industry-certifications",
+        "title": "Pre-recorded training webinars: Industry Certifications"
+      },
+      {
+        "id": "education-career-connections",
+        "title": "Pre-recorded training webinars: Education Connections & Career Connections"
+      },
+      {
+        "id": "work-based-learning",
+        "title": "Pre-recorded training webinars: Work-Based Learning (WBL)"
+      }
+    ]
+  },
+  {
+    "id": "courses-guides",
+    "title": "Courses & digital guides",
+    "articles": [
+      {
+        "id": "brightpath-courses-guides",
+        "title": "Brightpath courses & digital guides"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1435 @@
+[
+  {
+    "id": "about-brightpath",
+    "title": "Brightpath",
+    "description": "Learn about Brightpath and get started with YouScience",
+    "categories": [
+      {
+        "id": "start-here",
+        "title": "Start here",
+        "articles": [
+          {
+            "id": "about-brightpath",
+            "title": "About Brightpath",
+            "subheading": null
+          },
+          {
+            "id": "why-choose-youscience",
+            "title": "Why YouScience for educators and administrators kit",
+            "subheading": null
+          },
+          {
+            "id": "privacy-policy",
+            "title": "Privacy policy",
+            "subheading": null
+          },
+          {
+            "id": "product-updates",
+            "title": "Product updates",
+            "subheading": null
+          },
+          {
+            "id": "family-connect",
+            "title": "Family Connect: Parent & guardian experience",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "setup-preparation",
+        "title": "Setup & preparation",
+        "articles": [
+          {
+            "id": "log-in-create-account",
+            "title": "Log in or create an account",
+            "subheading": null
+          },
+          {
+            "id": "admin-intro-video",
+            "title": "Brightpath admin intro video",
+            "subheading": null
+          },
+          {
+            "id": "brightpath-roles",
+            "title": "Brightpath roles",
+            "subheading": null
+          },
+          {
+            "id": "student-experience",
+            "title": "Brightpath student experience and navigation",
+            "subheading": null
+          },
+          {
+            "id": "admin-experience",
+            "title": "Brightpath admin experience and navigation",
+            "subheading": null
+          },
+          {
+            "id": "get-started-form",
+            "title": "Get started form",
+            "subheading": null
+          },
+          {
+            "id": "getting-started-kit",
+            "title": "Getting started kit",
+            "subheading": null
+          },
+          {
+            "id": "technical-requirements",
+            "title": "Brightpath technical requirements (IT checklist)",
+            "subheading": null
+          },
+          {
+            "id": "add-email",
+            "title": "Add an additional email",
+            "subheading": null
+          },
+          {
+            "id": "my-profile",
+            "title": "My Profile",
+            "subheading": null
+          },
+          {
+            "id": "language-translation",
+            "title": "Language and translation in Chrome",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "training-resources",
+        "title": "Training and resources",
+        "articles": [
+          {
+            "id": "digital-guides",
+            "title": "Brightpath courses & digital guides",
+            "subheading": null
+          },
+          {
+            "id": "webinar-recordings",
+            "title": "Brightpath webinar recordings",
+            "subheading": null
+          },
+          {
+            "id": "register-live-webinar",
+            "title": "Register for a live training webinar",
+            "subheading": null
+          },
+          {
+            "id": "roadmap-6-8",
+            "title": "Brightpath roadmap: Grades 6-8",
+            "subheading": null
+          },
+          {
+            "id": "roadmap-9-12",
+            "title": "Brightpath roadmap: Grades 9-12",
+            "subheading": null
+          },
+          {
+            "id": "roadmap-postsecondary",
+            "title": "Brightpath roadmap: Postsecondary",
+            "subheading": null
+          },
+          {
+            "id": "classroom-lessons",
+            "title": "Classroom-ready lessons: Grades 6-12",
+            "subheading": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "user-administration",
+    "title": "User Administration",
+    "description": "Manage users, roles, and permissions across your organization",
+    "categories": [
+      {
+        "id": "start-here",
+        "title": "Start here",
+        "articles": [
+          {
+            "id": "quick-start-guide",
+            "title": "User Administration: Admin quick start guide",
+            "subheading": null
+          },
+          {
+            "id": "user-admin-overview",
+            "title": "User Administration overview",
+            "subheading": null
+          },
+          {
+            "id": "brightpath-roles",
+            "title": "Brightpath roles",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "user-management",
+        "title": "User management",
+        "articles": [
+          {
+            "id": "update-user-role",
+            "title": "Update a user's role",
+            "subheading": null
+          },
+          {
+            "id": "reset-learner-password",
+            "title": "Reset a learner's password",
+            "subheading": null
+          },
+          {
+            "id": "reset-your-password",
+            "title": "Reset your password",
+            "subheading": null
+          },
+          {
+            "id": "remove-delete-user",
+            "title": "Remove or delete a user's record",
+            "subheading": null
+          },
+          {
+            "id": "add-remove-user",
+            "title": "Add or remove a user",
+            "subheading": null
+          },
+          {
+            "id": "manage-invitations",
+            "title": "Manage user invitations",
+            "subheading": null
+          },
+          {
+            "id": "add-users-to-school",
+            "title": "Add existing users to another school or organization",
+            "subheading": null
+          },
+          {
+            "id": "move-students-groups",
+            "title": "Move students or invitations between groups",
+            "subheading": null
+          },
+          {
+            "id": "send-individual-invitations",
+            "title": "Send individual email invitations",
+            "subheading": null
+          },
+          {
+            "id": "family-connect-admin",
+            "title": "Family Connect: Admin experience",
+            "subheading": null
+          },
+          {
+            "id": "upload-all-users",
+            "title": "Upload all users into Brightpath",
+            "subheading": null
+          },
+          {
+            "id": "georgia-iccp-checkbox",
+            "title": "Georgia: Complete the ICCP checkbox",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "bulk-sso-rostering",
+        "title": "SSO & rostering",
+        "articles": [
+          {
+            "id": "classlink-rostering",
+            "title": "ClassLink rostering",
+            "subheading": null
+          },
+          {
+            "id": "clever-rostering",
+            "title": "Clever rostering",
+            "subheading": null
+          },
+          {
+            "id": "infinite-campus-rostering",
+            "title": "Infinite Campus rostering",
+            "subheading": null
+          },
+          {
+            "id": "powerschool-rostering",
+            "title": "PowerSchool rostering",
+            "subheading": null
+          },
+          {
+            "id": "sso-vs-rostering",
+            "title": "SSO vs. rostering",
+            "subheading": null
+          },
+          {
+            "id": "enable-sso",
+            "title": "Enable SSO",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "groups-permissions",
+        "title": "Groups & permissions",
+        "articles": [
+          {
+            "id": "create-manage-groups",
+            "title": "Create and manage groups",
+            "subheading": null
+          },
+          {
+            "id": "add-staff-to-group",
+            "title": "Add staff to a group",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "aptitude-management",
+        "title": "Aptitude & Career Discovery management & results management",
+        "articles": [
+          {
+            "id": "reset-restore-surveys",
+            "title": "Reset and restore brain game surveys",
+            "subheading": null
+          },
+          {
+            "id": "hold-release-results",
+            "title": "Hold and release results",
+            "subheading": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aptitude-career-discovery",
+    "title": "Aptitude & Career Discovery",
+    "description": "Help students discover their aptitudes and explore career pathways",
+    "categories": [
+      {
+        "id": "start-here",
+        "title": "Start here",
+        "articles": [
+          {
+            "id": "quick-start-guide",
+            "title": "Aptitude & Career Discovery: Quick start guide",
+            "subheading": null
+          },
+          {
+            "id": "student-video",
+            "title": "What is Aptitude & Career Discovery?",
+            "subheading": null
+          },
+          {
+            "id": "info-flyer",
+            "title": "Aptitude & Career Discovery informational flyer",
+            "subheading": null
+          },
+          {
+            "id": "solution-brief",
+            "title": "Solution brief",
+            "subheading": null
+          },
+          {
+            "id": "student-comm-flyer",
+            "title": "YouScience student communication flyer",
+            "subheading": "Student resources"
+          },
+          {
+            "id": "student-intro-videos",
+            "title": "Youscience Brightpath: Student introduction videos",
+            "subheading": null
+          },
+          {
+            "id": "parent-comm-flyer",
+            "title": "YouScience parent communication flyer",
+            "subheading": "Parent resources"
+          },
+          {
+            "id": "parent-guide",
+            "title": "Aptitude & Career Discovery: Parent guide",
+            "subheading": null
+          },
+          {
+            "id": "parent-guide-spanish",
+            "title": "Aptitud y descubrimiento profesional: gu\u00eda para padres (Aptitude & Career Discovery Parent Guide in Spanish)",
+            "subheading": null
+          },
+          {
+            "id": "what-we-measure",
+            "title": "What we measure and sample aptitude exercises",
+            "subheading": "Deepen understanding of aptitudes"
+          },
+          {
+            "id": "aptitudes-cheat-sheet",
+            "title": "Aptitudes cheat sheet",
+            "subheading": null
+          },
+          {
+            "id": "all-about-aptitudes",
+            "title": "All about aptitudes",
+            "subheading": null
+          },
+          {
+            "id": "science-behind",
+            "title": "The science behind YouScience",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "setup-preparation",
+        "title": "Setup & preparation",
+        "articles": [
+          {
+            "id": "implementation-checklists",
+            "title": "Implementation checklists",
+            "subheading": "Planning & implementation"
+          },
+          {
+            "id": "admin-journey",
+            "title": "Admin journey",
+            "subheading": null
+          },
+          {
+            "id": "sample-rollouts",
+            "title": "Sample rollouts",
+            "subheading": null
+          },
+          {
+            "id": "higher-ed-playbook",
+            "title": "Higher ed playbook",
+            "subheading": null
+          },
+          {
+            "id": "college-to-career-guide",
+            "title": "College-to-career new user guide",
+            "subheading": null
+          },
+          {
+            "id": "iep-connections",
+            "title": "IEP connections",
+            "subheading": null
+          },
+          {
+            "id": "georgia-gaconnects-login",
+            "title": "Georgia: Log into GaConnects Staff",
+            "subheading": null
+          },
+          {
+            "id": "georgia-talent-act",
+            "title": "Georgia: Top State for Talent Act Checklist",
+            "subheading": null
+          },
+          {
+            "id": "georgia-claim-students",
+            "title": "Georgia: Claim students into YouScience",
+            "subheading": null
+          },
+          {
+            "id": "prepare-user",
+            "title": "Prepare your user",
+            "subheading": "Prepare users"
+          },
+          {
+            "id": "completing-at-home",
+            "title": "Completing Aptitude & Career Discovery at home",
+            "subheading": null
+          },
+          {
+            "id": "school-comm-tools",
+            "title": "Getting started kit",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "use-aptitude",
+        "title": "Use Aptitude & Career Discovery",
+        "articles": [
+          {
+            "id": "take-brain-games",
+            "title": "Take your brain games",
+            "subheading": "Take the brain games"
+          },
+          {
+            "id": "brain-games-spanish",
+            "title": "\u00bfC\u00f3mo hago mis juegos mentales? (How do I take my brain games in Spanish)",
+            "subheading": null
+          },
+          {
+            "id": "read-aloud-general",
+            "title": "Aptitude & Career Discovery: Read-aloud directions",
+            "subheading": null
+          },
+          {
+            "id": "voice-instructions-spanish",
+            "title": "Aptitude & Career Discovery: Voice Instructions en Espanol \u2013 Instrucciones de voz",
+            "subheading": null
+          },
+          {
+            "id": "brain-game-length",
+            "title": "Brain game length",
+            "subheading": null
+          },
+          {
+            "id": "georgia-slds-login",
+            "title": "Georgia: Log into Discovery using SLDS",
+            "subheading": null
+          },
+          {
+            "id": "georgia-grade-activities",
+            "title": "Georgia: Meet grade-level activities",
+            "subheading": null
+          },
+          {
+            "id": "view-download-results",
+            "title": "View and download your results",
+            "subheading": "View & download results"
+          },
+          {
+            "id": "view-student-results",
+            "title": "How do I view student results?",
+            "subheading": null
+          },
+          {
+            "id": "one-page-summary",
+            "title": "Discovery One-Page Summary",
+            "subheading": null
+          },
+          {
+            "id": "results-walkthroughs",
+            "title": "Results walkthroughs",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "data-reports",
+        "title": "Data & reports",
+        "articles": [
+          {
+            "id": "discovery-admin-dashboard",
+            "title": "Discovery Admin Dashboard",
+            "subheading": null
+          },
+          {
+            "id": "one-page-summary-report",
+            "title": "Discovery One-Page Summary",
+            "subheading": null
+          },
+          {
+            "id": "aptitude-reports-cheat-sheet",
+            "title": "Aptitude & Career Discovery: Reports Cheat Sheet",
+            "subheading": null
+          },
+          {
+            "id": "clusters-alignment-report",
+            "title": "Clusters Alignment Report",
+            "subheading": null
+          },
+          {
+            "id": "counselor-summary-report",
+            "title": "Counselor Summary Report",
+            "subheading": null
+          },
+          {
+            "id": "discovery-engagement-report",
+            "title": "Discovery Engagement Report",
+            "subheading": null
+          },
+          {
+            "id": "majors-recommendation-report",
+            "title": "Majors Recommendations Report",
+            "subheading": null
+          },
+          {
+            "id": "pathways-report",
+            "title": "Pathways Report",
+            "subheading": null
+          },
+          {
+            "id": "student-summary-report",
+            "title": "Student summary report",
+            "subheading": null
+          },
+          {
+            "id": "top-careers-report",
+            "title": "Top Careers Report",
+            "subheading": null
+          },
+          {
+            "id": "georgia-grade-reports",
+            "title": "Georgia: Grade Level Activities Reports for 6-8 and 9-12",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "training-resources",
+        "title": "Training & resources",
+        "articles": [
+          {
+            "id": "prerecorded-webinars",
+            "title": "Pre-recorded training webinars: Aptitude & Career Discovery",
+            "subheading": "Training"
+          },
+          {
+            "id": "register-live-training-webinar",
+            "title": "Register for a live training webinar",
+            "subheading": null
+          },
+          {
+            "id": "georgia-implementation-webinar",
+            "title": "Georgia: View or register for an implementation training webinar",
+            "subheading": null
+          },
+          {
+            "id": "digital-guides",
+            "title": "Brightpath courses & digital guides",
+            "subheading": null
+          },
+          {
+            "id": "introduce-to-students",
+            "title": "Introduce Aptitude & Career Discovery to students",
+            "subheading": "Teaching resources"
+          },
+          {
+            "id": "classroom-lessons",
+            "title": "Classroom-ready lessons: Grades 6-12",
+            "subheading": null
+          },
+          {
+            "id": "best-fit-career-deck",
+            "title": "Best-fit careers exploration: Educator-led slide deck",
+            "subheading": null
+          },
+          {
+            "id": "results-walkthrough-toolkit",
+            "title": "Results walkthrough toolkit",
+            "subheading": null
+          },
+          {
+            "id": "conversation-starters",
+            "title": "Conversation starters",
+            "subheading": null
+          },
+          {
+            "id": "georgia-introduce-slds",
+            "title": "Georgia: Introduce Snippet, Snapshot, and Summit to students through SLDS",
+            "subheading": null
+          },
+          {
+            "id": "student-workbooks",
+            "title": "Student workbooks",
+            "subheading": "Student resources"
+          },
+          {
+            "id": "aptitude-results-tracker",
+            "title": "Aptitude results tracker",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "iec",
+        "title": "IEC",
+        "articles": [
+          {
+            "id": "iec-contact",
+            "title": "Get started as an Independent Educational Consultant (IEC)",
+            "subheading": null
+          },
+          {
+            "id": "iec-get-started",
+            "title": "IEC - How do I get my client started?",
+            "subheading": null
+          },
+          {
+            "id": "iec-advising-rollout",
+            "title": "1-on-1 Advising Rollout Checklist",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "faqs",
+        "title": "FAQs",
+        "articles": [
+          {
+            "id": "faqs-main",
+            "title": "FAQs: Aptitude & Career Discovery",
+            "subheading": null
+          },
+          {
+            "id": "aptitudes-vs-interests",
+            "title": "What is the difference between aptitudes and interests?",
+            "subheading": null
+          },
+          {
+            "id": "only-see-certifications",
+            "title": "Why does my Aptitude & Career Discovery student only see Industry Certifications?",
+            "subheading": null
+          },
+          {
+            "id": "purchase-account",
+            "title": "How do I purchase an Aptitude & Career Discovery account?",
+            "subheading": null
+          },
+          {
+            "id": "ipad-tablet",
+            "title": "Can I use an iPad/tablet device to take the brain games?",
+            "subheading": null
+          },
+          {
+            "id": "move-7-8-to-full",
+            "title": "How do students move from the 7th or 8th grade version to the full version of Aptitude & Career Discovery?",
+            "subheading": null
+          },
+          {
+            "id": "learning-differences",
+            "title": "How can students with learning differences take the brain games?",
+            "subheading": null
+          },
+          {
+            "id": "common-student-errors",
+            "title": "Troubleshooting and common errors",
+            "subheading": null
+          },
+          {
+            "id": "discovery-statuses",
+            "title": "Discovery statuses",
+            "subheading": null
+          },
+          {
+            "id": "career-cluster-descriptions",
+            "title": "Career cluster descriptions",
+            "subheading": null
+          },
+          {
+            "id": "georgia-summit-no-snapshot",
+            "title": "Georgia: Complete Summit (with or without Snapshot)",
+            "subheading": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "education-career-plan",
+    "title": "College & Career Readiness Planner",
+    "description": "Create and manage personalized education and career plans",
+    "categories": [
+      {
+        "id": "start-here",
+        "title": "Start here",
+        "articles": [
+          {
+            "id": "quick-start-guide",
+            "title": "Quick start guide",
+            "subheading": null
+          },
+          {
+            "id": "solution-brief",
+            "title": "Solution brief",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "setup-preparation",
+        "title": "Setup & preparation",
+        "articles": [
+          {
+            "id": "request-prepare-ccr",
+            "title": "Request & prepare for CCR",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "use-ccr",
+        "title": "Use CCR",
+        "articles": [
+          {
+            "id": "ccr-middle-school",
+            "title": "CCR: Middle school",
+            "subheading": null
+          },
+          {
+            "id": "ccr-high-school",
+            "title": "CCR: High school",
+            "subheading": null
+          },
+          {
+            "id": "ccr-admin-counselor-dashboard",
+            "title": "CCR: Admin & counselor dashboard",
+            "subheading": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "industry-certifications",
+    "title": "Industry Certifications",
+    "description": "Guide students toward industry-recognized certifications",
+    "categories": [
+      {
+        "id": "start-here",
+        "title": "Start here",
+        "articles": [
+          {
+            "id": "quick-start-guide",
+            "title": "Industry Certifications: Admin quick start guide",
+            "subheading": null
+          },
+          {
+            "id": "quick-start-guide-proctor",
+            "title": "Industry Certifications: Proctor quick start guide",
+            "subheading": null
+          },
+          {
+            "id": "solution-brief",
+            "title": "Solution brief",
+            "subheading": null
+          },
+          {
+            "id": "available-exams",
+            "title": "Available Industry Certification exams",
+            "subheading": null
+          },
+          {
+            "id": "exam-updates",
+            "title": "Exam updates year-to-year",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "setup-preparation",
+        "title": "Setup & preparation",
+        "articles": [
+          {
+            "id": "proctor-agreement",
+            "title": "Proctor agreement",
+            "subheading": null
+          },
+          {
+            "id": "exam-types",
+            "title": "Exam types",
+            "subheading": null
+          },
+          {
+            "id": "exam-prep-best-practices",
+            "title": "Best practices for exam preparation",
+            "subheading": null
+          },
+          {
+            "id": "manage-exam-codes",
+            "title": "Create, proctor, and manage exam codes",
+            "subheading": null
+          },
+          {
+            "id": "exam-accessibility",
+            "title": "Exam accessibility and accommodations",
+            "subheading": null
+          },
+          {
+            "id": "post-exam-from-pre",
+            "title": "Create a post-exam from another proctor's pre-exam",
+            "subheading": null
+          },
+          {
+            "id": "nchse-exams",
+            "title": "NCHSE exams in Industry Certifications",
+            "subheading": null
+          },
+          {
+            "id": "georgia-prepare-certifications",
+            "title": "Georgia: Prepare for certifications",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "use-certifications",
+        "title": "Use Industry Certifications",
+        "articles": [
+          {
+            "id": "student-instructions",
+            "title": "Industry Certifications: Student instructions",
+            "subheading": null
+          },
+          {
+            "id": "deliver-exam-codes",
+            "title": "Deliver exam codes to students",
+            "subheading": null
+          },
+          {
+            "id": "exam-time-needed",
+            "title": "Time needed for an exam",
+            "subheading": null
+          },
+          {
+            "id": "remote-proctor-teacher",
+            "title": "Remote proctoring: Teacher instructions",
+            "subheading": null
+          },
+          {
+            "id": "remote-proctor-student",
+            "title": "Remote proctoring: Student instructions",
+            "subheading": null
+          },
+          {
+            "id": "exam-retakes-proctor",
+            "title": "Exam retakes: Proctor instructions",
+            "subheading": null
+          },
+          {
+            "id": "exam-retakes-student",
+            "title": "Exam retakes: Student instructions",
+            "subheading": null
+          },
+          {
+            "id": "print-certificates",
+            "title": "Download and print student certificates: Proctor instructions",
+            "subheading": null
+          },
+          {
+            "id": "view-exam-history",
+            "title": "View student exam history",
+            "subheading": null
+          },
+          {
+            "id": "manage-performance",
+            "title": "Manage performance requirements",
+            "subheading": null
+          },
+          {
+            "id": "capstone-certifications",
+            "title": "Capstone Certifications",
+            "subheading": null
+          },
+          {
+            "id": "log-3rd-party",
+            "title": "Log 3rd-party industry tests",
+            "subheading": null
+          },
+          {
+            "id": "exam-troubleshooting",
+            "title": "Exam errors and troubleshooting",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "data-reports",
+        "title": "Data & reports",
+        "articles": [
+          {
+            "id": "reports-cheat-sheet",
+            "title": "Industry Certifications: Reports cheat sheet",
+            "subheading": null
+          },
+          {
+            "id": "reports-admins",
+            "title": "Reports available to admins",
+            "subheading": null
+          },
+          {
+            "id": "reports-staff",
+            "title": "Reports available to staff",
+            "subheading": null
+          },
+          {
+            "id": "reports-proctors",
+            "title": "Reports available to proctors",
+            "subheading": null
+          },
+          {
+            "id": "industry-recognition-report",
+            "title": "Industry Recognition Report",
+            "subheading": null
+          },
+          {
+            "id": "exam-performance-report",
+            "title": "Exam Performance Report",
+            "subheading": null
+          },
+          {
+            "id": "proctor-performance-report",
+            "title": "Proctor Performance Report",
+            "subheading": null
+          },
+          {
+            "id": "class-performance-report",
+            "title": "Class Performance Report",
+            "subheading": null
+          },
+          {
+            "id": "single-exam-summary",
+            "title": "Single Exam Summary Report",
+            "subheading": null
+          },
+          {
+            "id": "student-growth-report",
+            "title": "Student Growth Report",
+            "subheading": null
+          },
+          {
+            "id": "district-summary-report",
+            "title": "District Summary Report",
+            "subheading": null
+          },
+          {
+            "id": "pre-post-exam-summary",
+            "title": "Pre/Post Exam Summary",
+            "subheading": null
+          },
+          {
+            "id": "student-performance-report",
+            "title": "Student Performance Report",
+            "subheading": null
+          },
+          {
+            "id": "third-party-tests",
+            "title": "3rd-Party Industry Tests Reporting",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "training-resources",
+        "title": "Training & resources",
+        "articles": [
+          {
+            "id": "prerecorded-webinar",
+            "title": "Pre-recorded training webinars: Industry Certifications",
+            "subheading": null
+          },
+          {
+            "id": "register-live-webinar",
+            "title": "Register for a live training webinar",
+            "subheading": null
+          },
+          {
+            "id": "value-slide-deck",
+            "title": "The value of Industry Certifications: Educator-led slide deck",
+            "subheading": null
+          },
+          {
+            "id": "parent-guide",
+            "title": "Industry Certifications: Parent guide",
+            "subheading": null
+          },
+          {
+            "id": "certification-labs-guide",
+            "title": "Your guide to certification labs",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "faqs",
+        "title": "FAQs",
+        "articles": [
+          {
+            "id": "faqs-main",
+            "title": "FAQs: Industry Certifications",
+            "subheading": null
+          },
+          {
+            "id": "textbooks-available",
+            "title": "What textbooks are available to go along with the exams?",
+            "subheading": null
+          },
+          {
+            "id": "question-types",
+            "title": "What question types are used on an Industry Certification exam?",
+            "subheading": null
+          },
+          {
+            "id": "translated-exams",
+            "title": "Are exams translated or available in other languages?",
+            "subheading": null
+          },
+          {
+            "id": "pilot-exams",
+            "title": "What are pilot exams?",
+            "subheading": null
+          },
+          {
+            "id": "what-is-exam-code",
+            "title": "What is an exam code?",
+            "subheading": null
+          },
+          {
+            "id": "add-exam-codes",
+            "title": "How do I add exam codes for my proctors?",
+            "subheading": null
+          },
+          {
+            "id": "teacher-proctor-exam",
+            "title": "Why can't I take an exam as a teacher/proctor?",
+            "subheading": null
+          },
+          {
+            "id": "find-best-exam",
+            "title": "How do I find which exam is best for my course?",
+            "subheading": null
+          },
+          {
+            "id": "cut-score",
+            "title": "What is a cut score/passing percentage?",
+            "subheading": null
+          },
+          {
+            "id": "view-student-results",
+            "title": "How do I view student results?",
+            "subheading": null
+          },
+          {
+            "id": "find-missing-history",
+            "title": "How do I find my missing exam history?",
+            "subheading": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "education-connections",
+    "title": "Education Connections",
+    "description": "Connect educational programs with career opportunities",
+    "categories": [
+      {
+        "id": "start-here",
+        "title": "Start here",
+        "articles": [
+          {
+            "id": "quick-start-guide",
+            "title": "Quick start guide",
+            "subheading": null
+          },
+          {
+            "id": "solution-brief",
+            "title": "Education Connections solution brief",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "setup-preparation",
+        "title": "Setup & preparation",
+        "articles": [
+          {
+            "id": "manage-college-offerings",
+            "title": "Manage and edit your college offerings",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "use-education-connections",
+        "title": "Use Education Connections",
+        "articles": [
+          {
+            "id": "explore-plan-college",
+            "title": "Explore and plan for college",
+            "subheading": null
+          },
+          {
+            "id": "majors-programs-tool",
+            "title": "Majors/programs tool",
+            "subheading": null
+          },
+          {
+            "id": "schools-tool",
+            "title": "Schools tool",
+            "subheading": null
+          },
+          {
+            "id": "scholarships-tool",
+            "title": "Scholarships tool",
+            "subheading": null
+          },
+          {
+            "id": "plan-college-tool",
+            "title": "Plan for college tool",
+            "subheading": null
+          },
+          {
+            "id": "personalized-landing-page",
+            "title": "Personalized college landing page",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "common-app",
+        "title": "Common App",
+        "articles": [
+          {
+            "id": "common-app-faqs",
+            "title": "Common App: FAQs",
+            "subheading": null
+          },
+          {
+            "id": "common-app-counselor",
+            "title": "Common App: Counselor instructions",
+            "subheading": null
+          },
+          {
+            "id": "common-app-student",
+            "title": "Common App: Student instructions",
+            "subheading": null
+          },
+          {
+            "id": "common-app-teacher",
+            "title": "Common App: Teacher instructions",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "training-resources",
+        "title": "Training & resources",
+        "articles": [
+          {
+            "id": "prerecorded-webinar",
+            "title": "Pre-recorded training webinars: Education Connections & Career Connections",
+            "subheading": null
+          },
+          {
+            "id": "educator-guide",
+            "title": "College planning and applications: Educator-led slide deck",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "faqs",
+        "title": "FAQs",
+        "articles": [
+          {
+            "id": "opt-in-sharing",
+            "title": "Where can students opt in to share or manage sharing preferences?",
+            "subheading": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "work-based-learning",
+    "title": "Work-Based Learning",
+    "description": "Manage internships, apprenticeships, and work experiences",
+    "categories": [
+      {
+        "id": "start-here",
+        "title": "Start here",
+        "articles": [
+          {
+            "id": "quick-start-guide",
+            "title": "Quick start guide",
+            "subheading": null
+          },
+          {
+            "id": "overview",
+            "title": "Solution brief",
+            "subheading": null
+          },
+          {
+            "id": "transition-guide",
+            "title": "Welcome to Brightpath WBL: Your transition guide from Seamless WBL",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "setup",
+        "title": "Setup & preparation",
+        "articles": [
+          {
+            "id": "get-started-wbl",
+            "title": "Get started with Work-Based Learning (WBL)",
+            "subheading": null
+          },
+          {
+            "id": "create-employers",
+            "title": "Create Employers in the Employer Directory",
+            "subheading": null
+          },
+          {
+            "id": "create-labels",
+            "title": "Create Labels",
+            "subheading": null
+          },
+          {
+            "id": "create-fillable-forms",
+            "title": "Create Fillable Forms",
+            "subheading": null
+          },
+          {
+            "id": "create-email-templates",
+            "title": "Create Email Templates",
+            "subheading": null
+          },
+          {
+            "id": "create-esign-docs",
+            "title": "Create E-Sign Documents",
+            "subheading": null
+          },
+          {
+            "id": "create-wbl-opportunities",
+            "title": "Create WBL Opportunities",
+            "subheading": null
+          },
+          {
+            "id": "create-wbl-activities",
+            "title": "Create WBL Activities",
+            "subheading": null
+          },
+          {
+            "id": "create-advisory-boards",
+            "title": "Create Advisory Boards",
+            "subheading": null
+          },
+          {
+            "id": "manage-employer-profile",
+            "title": "Manage your private employer profile within WBL",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "use-wbl",
+        "title": "Use Work-Based Learning",
+        "articles": [
+          {
+            "id": "wbl-overview-dashboard",
+            "title": "WBL Overview Dashboard",
+            "subheading": null
+          },
+          {
+            "id": "wbl-student-instructions",
+            "title": "WBL: Student instructions",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "data-reports",
+        "title": "Data & reports",
+        "articles": [
+          {
+            "id": "student-activity-report",
+            "title": "WBL Student Activity Report",
+            "subheading": null
+          },
+          {
+            "id": "advisory-board-report",
+            "title": "WBL Advisory Board Report",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "training-resources",
+        "title": "Training & resources",
+        "articles": [
+          {
+            "id": "wbl-training-webinar",
+            "title": "Pre-recorded training webinars: Work-Based Learning (WBL)",
+            "subheading": null
+          },
+          {
+            "id": "parent-guide",
+            "title": "Work-Based Learning (WBL): Parent guide",
+            "subheading": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "career-connections",
+    "title": "Career Connections",
+    "description": "Link students with career opportunities and industry partners",
+    "categories": [
+      {
+        "id": "start-here",
+        "title": "Start here",
+        "articles": [
+          {
+            "id": "quick-start-guide",
+            "title": "Quick start guide",
+            "subheading": null
+          },
+          {
+            "id": "solution-brief",
+            "title": "Career Connections solution brief",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "setup-preparation",
+        "title": "Setup & preparation",
+        "articles": [
+          {
+            "id": "setup-employer-profile",
+            "title": "Set up your employer profile",
+            "subheading": null
+          },
+          {
+            "id": "manage-sponsorship",
+            "title": "Manage your sponsorship",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "use-career-connections",
+        "title": "Use Career Connections",
+        "articles": [
+          {
+            "id": "student-instructions",
+            "title": "Career Connections: Student instructions",
+            "subheading": null
+          }
+        ]
+      },
+      {
+        "id": "training-resources",
+        "title": "Training & resources",
+        "articles": [
+          {
+            "id": "prerecorded-webinar",
+            "title": "Pre-recorded training webinars: Education Connections & Career Connections",
+            "subheading": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "data-reporting",
+    "title": "Data & Reporting",
+    "description": "Access comprehensive data analytics and reporting tools",
+    "categories": [
+      {
+        "id": "overview",
+        "title": "Overview",
+        "articles": [
+          {
+            "id": "reporting-intro",
+            "title": "Introduction to Data & Reporting",
+            "subheading": null
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,2 +1,16 @@
 packages:
   - '.'
+
+# Explicitly allow the native postinstall scripts these packages need
+# (esbuild's binary download, tailwindcss's native oxide engine, etc.)
+# Newer pnpm blocks all postinstall scripts by default for supply-chain
+# safety, so without this the build fails with ERR_PNPM_IGNORED_BUILDS.
+allowBuilds:
+  '@parcel/watcher': true
+  '@tailwindcss/oxide': true
+  core-js: true
+  core-js-pure: true
+  esbuild: true
+
+overrides:
+  vite: '6.3.5'

@@ -3,7 +3,11 @@
  * Pulls article content from the Salesforce Help Center (Lightning
  * Knowledge) and writes it into the new Success Hub database, replacing
  * the placeholder "Content not yet migrated" text created by
- * seed-taxonomy.mjs.
+ * seed-taxonomy.mjs. Also re-hosts:
+ *   - Images embedded in the article body (so they don't silently break
+ *     once the old Help Center is retired)
+ *   - File attachments on the article (PDFs, docs, etc.) — these appear
+ *     as a "Downloads" list on the article page
  *
  * WHAT THIS MATCHES ON
  * ---------------------
@@ -21,8 +25,11 @@
  * 2. Confirm SF_KNOWLEDGE_OBJECT and SF_BODY_FIELD match your org — see
  *    the "Field discovery" note below if you're not sure of the exact
  *    API names.
- * 3. Run `npx ampx sandbox` in one terminal (keep it running).
- * 4. Run `pnpm migrate:salesforce` in another terminal.
+ * 3. Make sure your backend is deployed (amplify_outputs.json has real
+ *    values, not the placeholder).
+ * 4. Run `node scripts/migrate-from-salesforce.mjs --dry-run` first to
+ *    see the match rate before writing anything.
+ * 5. Run `pnpm migrate:salesforce` for real.
  *
  * FIELD DISCOVERY
  * ----------------
@@ -30,12 +37,23 @@
  *   node scripts/migrate-from-salesforce.mjs --describe
  * This prints the describe() for common candidate objects so you can
  * confirm the right one before running the real migration.
+ *
+ * FLAGS
+ * -----
+ *   --describe          print field info for candidate objects, then exit
+ *   --dry-run           show what would be matched/migrated, write nothing
+ *   --skip-images       don't re-host embedded images (leaves original
+ *                       Salesforce image URLs in place — will break once
+ *                       the old Help Center is retired)
+ *   --skip-attachments  don't migrate file attachments (Downloads list)
  */
 import 'dotenv/config';
 import jsforce from 'jsforce';
 import fs from 'node:fs';
 import { Amplify } from 'aws-amplify';
 import { generateClient } from 'aws-amplify/data';
+import { uploadData } from 'aws-amplify/storage';
+import { signInSeedUser } from './lib/seedAuth.mjs';
 import outputs from '../amplify_outputs.json' with { type: 'json' };
 
 const {
@@ -46,13 +64,16 @@ const {
   SF_KNOWLEDGE_OBJECT = 'Knowledge__kav',
   SF_BODY_FIELD = 'Article_Body__c',
   SF_URLNAME_FIELD = 'UrlName',
+  SF_API_VERSION = 'v59.0',
 } = process.env;
 
 const DESCRIBE_MODE = process.argv.includes('--describe');
 const DRY_RUN = process.argv.includes('--dry-run');
+const SKIP_IMAGES = process.argv.includes('--skip-images');
+const SKIP_ATTACHMENTS = process.argv.includes('--skip-attachments');
 
 Amplify.configure(outputs);
-const client = generateClient({ authMode: 'apiKey' });
+const client = generateClient({ authMode: 'userPool' });
 
 const crosswalk = JSON.parse(
   fs.readFileSync(new URL('./article-url-crosswalk.json', import.meta.url))
@@ -65,6 +86,13 @@ function urlNameFromLegacyUrl(url) {
   } catch {
     return null;
   }
+}
+
+function slugifyFilename(name) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9.]+/g, '-')
+    .replace(/(^-|-$)/g, '');
 }
 
 async function connect() {
@@ -96,7 +124,125 @@ async function describeCandidates(conn) {
   }
 }
 
+/**
+ * Downloads a binary resource from Salesforce using the authenticated
+ * session (works for both ContentVersion file downloads and inline
+ * rich-text images), and uploads it to S3 under the given key prefix.
+ * Returns the new public URL, or null if anything failed (caller should
+ * leave the original content/reference untouched on failure).
+ */
+async function downloadAndRehost(conn, sfPath, keyPrefix, filenameHint) {
+  try {
+    const url = sfPath.startsWith('http') ? sfPath : `${conn.instanceUrl}${sfPath}`;
+    const res = await fetch(url, {
+      headers: { Authorization: `Bearer ${conn.accessToken}` },
+    });
+    if (!res.ok) {
+      console.warn(`    Download failed (${res.status}) for ${url}`);
+      return null;
+    }
+    const contentType = res.headers.get('content-type') || 'application/octet-stream';
+    const buffer = Buffer.from(await res.arrayBuffer());
+    const filename = slugifyFilename(filenameHint || url.split('/').pop() || 'file');
+    const key = `public/${keyPrefix}/${Date.now()}-${filename}`;
+    const result = await uploadData({
+      path: key,
+      data: buffer,
+      options: { contentType },
+    }).result;
+    // Build the public URL from the storage bucket config directly
+    // (avoids an extra getUrl round-trip per file).
+    const bucket = outputs.storage?.bucket_name;
+    const region = outputs.storage?.aws_region;
+    return `https://${bucket}.s3.${region}.amazonaws.com/${result.path}`;
+  } catch (err) {
+    console.warn(`    Re-host failed for ${sfPath}:`, err.message);
+    return null;
+  }
+}
+
+/**
+ * Finds <img src="..."> tags pointing at Salesforce-hosted images
+ * (relative paths, or full URLs on the org's own instance domain),
+ * downloads each one, re-hosts it in S3, and rewrites the src in place.
+ */
+async function migrateEmbeddedImages(conn, html, articleTitle) {
+  if (!html) return { html, count: 0 };
+  const imgRegex = /<img[^>]+src=["']([^"']+)["']/gi;
+  const matches = [...html.matchAll(imgRegex)];
+  if (matches.length === 0) return { html, count: 0 };
+
+  let updatedHtml = html;
+  let count = 0;
+  for (const match of matches) {
+    const src = match[1];
+    const isSalesforceHosted =
+      src.startsWith('/') || src.includes(conn.instanceUrl.replace(/^https?:\/\//, ''));
+    if (!isSalesforceHosted) continue; // already an external/public URL, leave it
+
+    const newUrl = await downloadAndRehost(conn, src, 'article-images', `${articleTitle}-image`);
+    if (newUrl) {
+      updatedHtml = updatedHtml.split(src).join(newUrl);
+      count += 1;
+      console.log(`    Re-hosted image: ${src.slice(0, 60)}... → S3`);
+    }
+  }
+  return { html: updatedHtml, count };
+}
+
+/**
+ * Finds file attachments (ContentDocumentLink → ContentVersion) linked
+ * to a Knowledge article record and re-hosts each one in S3. Returns an
+ * array of {name, url} for storage in Article.attachmentsJson.
+ */
+async function migrateAttachments(conn, sfRecordId) {
+  let links;
+  try {
+    links = await conn.query(
+      `SELECT ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId = '${sfRecordId}'`
+    );
+  } catch (err) {
+    // Content objects may not be enabled/accessible for this integration
+    // user — don't fail the whole migration over it.
+    console.warn('    Could not query attachments:', err.message);
+    return [];
+  }
+  if (!links.records?.length) return [];
+
+  const attachments = [];
+  for (const link of links.records) {
+    let versions;
+    try {
+      versions = await conn.query(
+        `SELECT Id, Title, FileExtension FROM ContentVersion ` +
+          `WHERE ContentDocumentId = '${link.ContentDocumentId}' AND IsLatest = true LIMIT 1`
+      );
+    } catch (err) {
+      console.warn('    Could not load file version:', err.message);
+      continue;
+    }
+    const version = versions.records?.[0];
+    if (!version) continue;
+
+    const filename = `${version.Title}.${version.FileExtension}`;
+    const newUrl = await downloadAndRehost(
+      conn,
+      `/services/data/${SF_API_VERSION}/sobjects/ContentVersion/${version.Id}/VersionData`,
+      'article-attachments',
+      filename
+    );
+    if (newUrl) {
+      attachments.push({ name: filename, url: newUrl });
+      console.log(`    Re-hosted attachment: ${filename}`);
+    }
+  }
+  return attachments;
+}
+
 async function main() {
+  if (!DESCRIBE_MODE) {
+    await signInSeedUser();
+  }
   const conn = await connect();
 
   if (DESCRIBE_MODE) {
@@ -111,6 +257,8 @@ async function main() {
   let updated = 0;
   let notFoundInSalesforce = 0;
   let noCrosswalkEntry = 0;
+  let imagesRehosted = 0;
+  let attachmentsRehosted = 0;
 
   for (const article of articles) {
     const legacyUrl = crosswalk[article.title];
@@ -142,24 +290,44 @@ async function main() {
     matched += 1;
     console.log(`Matched: ${article.title}  ←  ${urlName}`);
 
-    if (!DRY_RUN) {
-      const { errors } = await client.models.Article.update({
-        id: article.id,
-        contentHtml: record[SF_BODY_FIELD],
-        legacyHelpCenterUrl: legacyUrl,
-        status: 'PUBLISHED',
-      });
-      if (errors) {
-        console.error('  Failed to save:', errors);
-      } else {
-        updated += 1;
+    if (DRY_RUN) continue; // no network-heavy work or writes in dry-run
+
+    let contentHtml = record[SF_BODY_FIELD];
+
+    if (!SKIP_IMAGES) {
+      const result = await migrateEmbeddedImages(conn, contentHtml, article.title);
+      contentHtml = result.html;
+      imagesRehosted += result.count;
+    }
+
+    let attachmentsJson;
+    if (!SKIP_ATTACHMENTS) {
+      const attachments = await migrateAttachments(conn, record.Id);
+      if (attachments.length > 0) {
+        attachmentsJson = JSON.stringify(attachments);
+        attachmentsRehosted += attachments.length;
       }
+    }
+
+    const { errors } = await client.models.Article.update({
+      id: article.id,
+      contentHtml,
+      legacyHelpCenterUrl: legacyUrl,
+      status: 'PUBLISHED',
+      ...(attachmentsJson ? { attachmentsJson } : {}),
+    });
+    if (errors) {
+      console.error('  Failed to save:', errors);
+    } else {
+      updated += 1;
     }
   }
 
   console.log('\n--- Summary ---');
   console.log('Matched in Salesforce:', matched);
   console.log('Updated in database:', DRY_RUN ? '(dry run — none written)' : updated);
+  console.log('Images re-hosted:', DRY_RUN ? '(dry run — skipped)' : imagesRehosted);
+  console.log('Attachments re-hosted:', DRY_RUN ? '(dry run — skipped)' : attachmentsRehosted);
   console.log('No crosswalk entry (never had a legacy URL):', noCrosswalkEntry);
   console.log('Had a legacy URL but not found/published in Salesforce:', notFoundInSalesforce);
   console.log(

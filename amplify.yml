@@ -5,16 +5,18 @@ backend:
       commands:
         - which pnpm || npm install -g pnpm
         - pnpm install --prefer-offline
-        - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
+        - NODE_OPTIONS=--max-old-space-size=6144 npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
+        - echo "Backend phase memory before cleanup:" && free -h || true
 frontend:
   phases:
     preBuild:
       commands:
         - which pnpm || npm install -g pnpm
         - pnpm install --prefer-offline
+        - echo "Memory at start of frontend phase:" && free -h || true
     build:
       commands:
-        - NODE_OPTIONS=--max-old-space-size=14336 pnpm run build
+        - NODE_OPTIONS=--max-old-space-size=4096 pnpm run build
   artifacts:
     baseDirectory: dist
     files:

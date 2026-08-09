@@ -35,6 +35,21 @@ export default defineConfig({
     // chunk smaller, which reduces peak memory during minification (this
     // was contributing to CI build OOMs) and improves browser caching.
     rollupOptions: {
+      // These are backend-only tooling (used by amplify/*.ts and
+      // scripts/*.mjs) and must never end up in the browser bundle.
+      // Pages only reference them via `import type`, which esbuild should
+      // already strip, but externalizing here guarantees Rollup can never
+      // resolve/bundle aws-cdk-lib (a very large package) into the client
+      // build even if that stripping doesn't happen for some reason —
+      // this was a suspected contributor to CI build OOMs.
+      external: [
+        '@aws-amplify/backend',
+        '@aws-amplify/backend-cli',
+        'aws-cdk-lib',
+        'constructs',
+        'jsforce',
+        'dotenv',
+      ],
       output: {
         manualChunks: {
           'vendor-react': ['react', 'react-dom', 'react-router'],
@@ -46,5 +61,6 @@ export default defineConfig({
       },
     },
     chunkSizeWarningLimit: 800,
+    reportCompressedSize: false,
   },
 })

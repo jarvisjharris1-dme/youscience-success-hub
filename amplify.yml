@@ -6,22 +6,17 @@ backend:
         - which pnpm || npm install -g pnpm
         - pnpm install --prefer-offline
         - NODE_OPTIONS=--max-old-space-size=6144 npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
-        - echo "Backend phase memory before cleanup:" && free -h || true
 frontend:
   phases:
-    preBuild:
-      commands:
-        - which pnpm || npm install -g pnpm
-        - pnpm install --prefer-offline
-        - echo "Memory at start of frontend phase:" && free -h || true
     build:
       commands:
-        - NODE_OPTIONS=--max-old-space-size=4096 pnpm run build
+        # The frontend build container has been unreliable (see SETUP.md
+        # for details). Instead of running `vite build` here, this
+        # deploys a pre-built dist/ that gets committed to the repo —
+        # see "Manual frontend build" in SETUP.md for how to update it.
+        - echo "Using pre-built dist/ — see SETUP.md 'Manual frontend build'"
+        - test -d dist && echo "dist/ found, deploying as-is" || (echo "ERROR: no dist/ folder committed — run the manual build steps in SETUP.md first" && exit 1)
   artifacts:
     baseDirectory: dist
     files:
       - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
-      - .pnpm-store/**/*

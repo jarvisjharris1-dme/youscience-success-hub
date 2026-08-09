@@ -22,24 +22,52 @@ to Amplify. Below is the order to run things in.
 pnpm install   # or npm install — package.json has everything already added
 ```
 
-## 2. Deploy the backend (sandbox / dev)
+## 2. Deploy the backend
 
-This provisions the DynamoDB tables, Cognito user pool, and S3 bucket in
-your AWS account, and writes real values into `amplify_outputs.json`
-(currently a placeholder file).
+The backend (Auth, Data, Storage) already deploys successfully through
+Amplify's own CI on every push — that part has been reliable. What
+hasn't been reliable is the **frontend build step** in that same CI
+container (`vite build` intermittently gets killed with an out-of-memory
+error, even though the build itself only uses well under 1GB — this
+looks like an AWS-side build-fleet issue, not anything in this app's
+code; worth an AWS Support case if you have a support plan).
 
-```bash
-npx ampx sandbox
-```
+Because of that, this app is set up to skip running `vite build` inside
+Amplify's CI entirely. Instead, you build the frontend yourself (in AWS
+CloudShell — no local install needed) and commit the finished output.
+Amplify's CI then just deploys whatever's already in `dist/`, which is
+fast and doesn't hit the broken step.
 
-Leave this running in its own terminal — it watches `amplify/` and
-redeploys on changes. It will prompt you to confirm your AWS profile/
-credentials if you haven't used Amplify Gen2 before.
+### Manual frontend build (do this any time you change frontend code)
 
-For production, replace this step with connecting the repo in the
-**AWS Amplify Console** and using `npx ampx pipeline-deploy` in CI
-instead of the sandbox — see
-https://docs.amplify.aws/react/deploy-and-host/fullstack-branching/branch-deployments/
+1. Open **AWS CloudShell** (terminal icon in the top nav of the AWS Console)
+2. Clone the repo and install dependencies:
+   ```bash
+   git clone https://github.com/jarvisjharris1-dme/youscience-success-hub.git
+   cd youscience-success-hub
+   npm install -g pnpm
+   pnpm install
+   ```
+3. Pull the **real** backend config (your backend is already deployed —
+   this fetches its live values without redeploying anything):
+   ```bash
+   npx ampx generate outputs --app-id dwhq082n5ysih --branch main
+   ```
+4. Build and commit:
+   ```bash
+   pnpm run build
+   git add dist amplify_outputs.json
+   git commit -m "Manual frontend build"
+   git push origin main
+   ```
+5. That push triggers a new Amplify build automatically. This time the
+   frontend phase just verifies `dist/` exists and deploys it — no
+   `vite build` runs in CI at all, so the OOM can't happen there.
+
+If AWS Support later resolves the underlying build-container issue, you
+can switch back to building in CI: restore the `pnpm run build` command
+in `amplify.yml`'s frontend `build` phase (see git history for the
+previous version) and remove `dist/` from `.gitignore`'s exceptions.
 
 ## 3. Seed the existing structure
 

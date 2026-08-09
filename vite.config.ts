@@ -30,4 +30,21 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    // Splitting heavy dependencies into their own chunks keeps any single
+    // chunk smaller, which reduces peak memory during minification (this
+    // was contributing to CI build OOMs) and improves browser caching.
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router'],
+          'vendor-amplify': ['aws-amplify', '@aws-amplify/ui-react'],
+          'vendor-editor': ['@tiptap/react', '@tiptap/starter-kit', '@tiptap/extension-image', '@tiptap/extension-link'],
+          'vendor-charts': ['recharts'],
+          'vendor-icons': ['lucide-react'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 800,
+  },
 })

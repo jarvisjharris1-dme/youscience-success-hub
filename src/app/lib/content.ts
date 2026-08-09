@@ -54,7 +54,7 @@ export const createProduct = (input: {
   description?: string;
   iconKey?: string;
   sortOrder?: number;
-}) => client.models.Product.create(input);
+}) => client.models.Product.create(input, { authMode: 'userPool' });
 
 export const updateProduct = (input: { id: string } & Partial<{
   slug: string;
@@ -62,24 +62,24 @@ export const updateProduct = (input: { id: string } & Partial<{
   description: string;
   iconKey: string;
   sortOrder: number;
-}>) => client.models.Product.update(input);
+}>) => client.models.Product.update(input, { authMode: 'userPool' });
 
-export const deleteProduct = (id: string) => client.models.Product.delete({ id });
+export const deleteProduct = (id: string) => client.models.Product.delete({ id }, { authMode: 'userPool' });
 
 export const createCategory = (input: {
   slug: string;
   title: string;
   productId: string;
   sortOrder?: number;
-}) => client.models.Category.create(input);
+}) => client.models.Category.create(input, { authMode: 'userPool' });
 
 export const updateCategory = (input: { id: string } & Partial<{
   slug: string;
   title: string;
   sortOrder: number;
-}>) => client.models.Category.update(input);
+}>) => client.models.Category.update(input, { authMode: 'userPool' });
 
-export const deleteCategory = (id: string) => client.models.Category.delete({ id });
+export const deleteCategory = (id: string) => client.models.Category.delete({ id }, { authMode: 'userPool' });
 
 export const createArticle = (input: {
   slug: string;
@@ -91,7 +91,7 @@ export const createArticle = (input: {
   categoryId: string;
   isQuickStartGuide?: boolean;
   legacyHelpCenterUrl?: string;
-}) => client.models.Article.create(input);
+}) => client.models.Article.create(input, { authMode: 'userPool' });
 
 export const updateArticle = (input: { id: string } & Partial<{
   slug: string;
@@ -103,9 +103,9 @@ export const updateArticle = (input: { id: string } & Partial<{
   categoryId: string;
   isQuickStartGuide: boolean;
   legacyHelpCenterUrl: string;
-}>) => client.models.Article.update(input);
+}>) => client.models.Article.update(input, { authMode: 'userPool' });
 
-export const deleteArticle = (id: string) => client.models.Article.delete({ id });
+export const deleteArticle = (id: string) => client.models.Article.delete({ id }, { authMode: 'userPool' });
 
 export async function listAllArticlesForAdmin() {
   const { data } = await client.models.Article.list();
@@ -164,8 +164,8 @@ export const createSupportTVCategory = (input: {
   title: string;
   description?: string;
   sortOrder?: number;
-}) => client.models.SupportTVCategory.create(input);
-export const deleteSupportTVCategory = (id: string) => client.models.SupportTVCategory.delete({ id });
+}) => client.models.SupportTVCategory.create(input, { authMode: 'userPool' });
+export const deleteSupportTVCategory = (id: string) => client.models.SupportTVCategory.delete({ id }, { authMode: 'userPool' });
 
 export const createSupportTVItem = (input: {
   slug: string;
@@ -179,7 +179,7 @@ export const createSupportTVItem = (input: {
   status: 'DRAFT' | 'PUBLISHED';
   categoryId: string;
   sortOrder?: number;
-}) => client.models.SupportTVItem.create(input);
+}) => client.models.SupportTVItem.create(input, { authMode: 'userPool' });
 export const updateSupportTVItem = (input: { id: string } & Partial<{
   slug: string;
   title: string;
@@ -191,8 +191,8 @@ export const updateSupportTVItem = (input: { id: string } & Partial<{
   featuredOnHome: boolean;
   status: 'DRAFT' | 'PUBLISHED';
   sortOrder: number;
-}>) => client.models.SupportTVItem.update(input);
-export const deleteSupportTVItem = (id: string) => client.models.SupportTVItem.delete({ id });
+}>) => client.models.SupportTVItem.update(input, { authMode: 'userPool' });
+export const deleteSupportTVItem = (id: string) => client.models.SupportTVItem.delete({ id }, { authMode: 'userPool' });
 
 export const createVideo = (input: {
   title: string;
@@ -202,7 +202,7 @@ export const createVideo = (input: {
   videoUrl?: string;
   itemId: string;
   sortOrder?: number;
-}) => client.models.Video.create(input);
+}) => client.models.Video.create(input, { authMode: 'userPool' });
 export const updateVideo = (input: { id: string } & Partial<{
   title: string;
   description: string;
@@ -210,8 +210,8 @@ export const updateVideo = (input: { id: string } & Partial<{
   thumbnailUrl: string;
   videoUrl: string;
   sortOrder: number;
-}>) => client.models.Video.update(input);
-export const deleteVideo = (id: string) => client.models.Video.delete({ id });
+}>) => client.models.Video.update(input, { authMode: 'userPool' });
+export const deleteVideo = (id: string) => client.models.Video.delete({ id }, { authMode: 'userPool' });
 
 // ---- Training Webinars ----
 
@@ -226,8 +226,8 @@ export async function listWebinarLinksForSection(sectionId: string) {
 }
 
 export const createWebinarSection = (input: { slug: string; title: string; sortOrder?: number }) =>
-  client.models.WebinarSection.create(input);
-export const deleteWebinarSection = (id: string) => client.models.WebinarSection.delete({ id });
+  client.models.WebinarSection.create(input, { authMode: 'userPool' });
+export const deleteWebinarSection = (id: string) => client.models.WebinarSection.delete({ id }, { authMode: 'userPool' });
 
 export const createWebinarLink = (input: {
   title: string;
@@ -235,11 +235,11 @@ export const createWebinarLink = (input: {
   externalUrl?: string;
   linkedArticleId?: string;
   sectionId: string;
-}) => client.models.WebinarLink.create(input);
+}) => client.models.WebinarLink.create(input, { authMode: 'userPool' });
 export const updateWebinarLink = (input: { id: string } & Partial<{
   title: string;
   sortOrder: number;
   externalUrl: string;
   linkedArticleId: string;
-}>) => client.models.WebinarLink.update(input);
-export const deleteWebinarLink = (id: string) => client.models.WebinarLink.delete({ id });
+}>) => client.models.WebinarLink.update(input, { authMode: 'userPool' });
+export const deleteWebinarLink = (id: string) => client.models.WebinarLink.delete({ id }, { authMode: 'userPool' });

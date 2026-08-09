@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router';
-import { ChevronRight, Home, ThumbsUp, ThumbsDown } from 'lucide-react';
+import { ChevronRight, Home, ThumbsUp, ThumbsDown, Download } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { client } from '../lib/amplifyClient';
 
@@ -102,6 +102,37 @@ export default function ArticlePage() {
                 dangerouslySetInnerHTML={{ __html: article.contentHtml || '' }}
                 style={{ fontSize: '16px', lineHeight: '1.75', color: '#374151' }}
               />
+
+              {/* Downloads (files migrated from the old Help Center article) */}
+              {(() => {
+                let attachments: { name: string; url: string }[] = [];
+                try {
+                  attachments = article.attachmentsJson ? JSON.parse(article.attachmentsJson) : [];
+                } catch {
+                  attachments = [];
+                }
+                if (attachments.length === 0) return null;
+                return (
+                  <div className="mt-10 pt-6 border-t border-gray-200">
+                    <h3 className="font-bold text-gray-900 mb-3">Downloads</h3>
+                    <ul className="space-y-2">
+                      {attachments.map((file, i) => (
+                        <li key={i}>
+                          <a
+                            href={file.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-[#C15AB3] hover:text-[#C15AB3]/80 font-medium"
+                          >
+                            <Download className="w-4 h-4" />
+                            {file.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })()}
             </>
           )}
 

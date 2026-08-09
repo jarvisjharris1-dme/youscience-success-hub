@@ -4,14 +4,14 @@ backend:
     build:
       commands:
         - which pnpm || npm install -g pnpm
-        - pnpm install --frozen-lockfile --prefer-offline
+        - pnpm install --prefer-offline
         - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 frontend:
   phases:
     preBuild:
       commands:
         - which pnpm || npm install -g pnpm
-        - pnpm install --frozen-lockfile --prefer-offline
+        - pnpm install --prefer-offline
     build:
       commands:
         - NODE_OPTIONS=--max-old-space-size=14336 pnpm run build

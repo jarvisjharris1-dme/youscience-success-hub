@@ -24,8 +24,9 @@ export function QuickLinks() {
       title: 'YouScience Academy',
       description: 'Explore role-based training',
       color: 'bg-[#3EC6C2]',
-      link: '/academy',
-      isClickable: true
+      link: 'https://main.d1ejgsskjo7hmj.amplifyapp.com/',
+      isClickable: true,
+      isExternal: true
     },
     {
       icon: Bell,

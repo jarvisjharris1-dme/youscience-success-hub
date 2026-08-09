@@ -103,6 +103,7 @@ export const updateArticle = (input: { id: string } & Partial<{
   categoryId: string;
   isQuickStartGuide: boolean;
   legacyHelpCenterUrl: string;
+  attachmentsJson: string;
 }>) => client.models.Article.update(input, { authMode: 'userPool' });
 
 export const deleteArticle = (id: string) => client.models.Article.delete({ id }, { authMode: 'userPool' });

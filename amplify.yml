@@ -10,12 +10,8 @@ frontend:
   phases:
     build:
       commands:
-        # The frontend build container has been unreliable (see SETUP.md
-        # for details). Instead of running `vite build` here, this
-        # deploys a pre-built dist/ that gets committed to the repo —
-        # see "Manual frontend build" in SETUP.md for how to update it.
-        - echo "Using pre-built dist/ — see SETUP.md 'Manual frontend build'"
-        - test -d dist && echo "dist/ found, deploying as-is" || (echo "ERROR: no dist/ folder committed — run the manual build steps in SETUP.md first" && exit 1)
+        - echo "Deploying pre-built dist folder (see SETUP.md)"
+        - ls dist
   artifacts:
     baseDirectory: dist
     files:

@@ -53,6 +53,11 @@ const schema = a.schema({
       status: a.enum(['DRAFT', 'PUBLISHED']),
       isQuickStartGuide: a.boolean().default(false), // shows on the Quick Start Guides page
       legacyHelpCenterUrl: a.string(), // original Salesforce URL, kept for reference/audit only
+      // JSON array of {name, url} for files that were attached to the
+      // original Salesforce Knowledge article (PDFs, docs, etc.),
+      // migrated to S3 by migrate-from-salesforce.mjs. Rendered as a
+      // "Downloads" list on the article page.
+      attachmentsJson: a.string(),
       categoryId: a.id().required(),
       category: a.belongsTo('Category', 'categoryId'),
     })
